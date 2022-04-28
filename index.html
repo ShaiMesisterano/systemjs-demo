@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script type="systemjs-importmap">
+        {
+          "imports": {
+            "lodash": "/path/to/lodash/index.js",
+            "lodash/": "/path/to/lodash/"
+          },
+          "scopes": {
+            "/path/to/lodash/": {
+              "lodash-dependency": "/path/to/scoped/package.js"
+            }
+          }
+        }
+        </script> -->
+        <script src="node_modules/systemjs/dist/system.js"></script>
+        <script src="node_modules/systemjs-babel/dist/systemjs-babel.js"></script>
+        <script>
+        System.import('./src/foo.ts').then(function(foo) {
+          console.log(foo.default());
+        });
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
