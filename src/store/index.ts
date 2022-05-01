@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './slices/counter/index';
-import createSagaMiddleware from 'redux-saga';
+import ReduxSaga from 'redux-saga';
 import rootSaga from './sagas/counter/index';
 import logger from 'redux-logger';
 
-const sagaMiddleware = createSagaMiddleware.default();
+const sagaMiddleware = (ReduxSaga as any).default()
 
 export default configureStore({
     reducer: {
