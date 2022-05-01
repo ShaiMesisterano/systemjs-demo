@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>SystemJs/React Hello World</title>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-neptune/resources/theme-neptune-all.css
+         " />
+    <script type="systemjs-importmap">
+            {
+                "imports": {
+                    "react": "./node_modules/react/umd/react.development.js",
+                    "react-dom": "./node_modules/react-dom/umd/react-dom.development.js",
+                    "@reduxjs/toolkit": "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.umd.js",
+                    "immer": "./node_modules/immer/dist/index.js",
+                    "redux": "./node_modules/redux/dist/redux.js",
+                    "reselect": "./node_modules/reselect/dist/reselect.js",
+                    "redux-thunk": "./node_modules/redux-thunk/dist/redux-thunk.js",
+                    "react-redux": "./node_modules/react-redux/dist/react-redux.js",
+                    "redux-saga": "./node_modules/redux-saga/dist/redux-saga.umd.js",
+                    "redux-saga/effects": "./node_modules/redux-saga/dist/redux-saga-effects.umd.js",
+                    "redux-logger": "./node_modules/redux-logger/dist/redux-logger.js"
+                }
+            }
+            </script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="./systemjs-hooks/resolve.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"> </script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        async function loadScripts() {
+            await System.import("./src/utils/ui");
+            await System.import("./js/app.js");
+        }
+        loadScripts();
+    </script>
+</body>
+
+</html>
