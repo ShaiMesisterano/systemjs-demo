@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-Ext.createComponent = ({ Component, element }) => {
-    ReactDOM.render(<Component />, element);
+declare global {
+    interface Window { Ext: Record<string, unknown>; }
+}
+
+window.Ext = window.Ext || {};
+
+window.Ext.createComponent = ({ Component, element }) => {
+    try {
+        ReactDOM.render(<Component />, element);
+    } catch ({ message }) {
+        console.error(message);
+    }
 }
