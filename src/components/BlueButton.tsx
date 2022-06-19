@@ -7,9 +7,9 @@ import { increment } from '../store/slices/counter/index';
 const WrappedBlueButton = () => {
     const dispatch = useDispatch();
 
-    const handleClick = useCallback( () => {
+    const handleClick = useCallback(() => {
         console.log('*** handleClick');
-        dispatch(increment())
+        dispatch(increment());
     }, []);
 
     return (
@@ -19,14 +19,14 @@ const WrappedBlueButton = () => {
             </button>
         </Provider>
     );
-}
+};
 
 const BlueButton = () => {
     return (
         <Provider store={store}>
             <WrappedBlueButton />
         </Provider>
-    )
-}
+    );
+};
 
 export default BlueButton;

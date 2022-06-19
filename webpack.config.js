@@ -1,4 +1,5 @@
 const path = require('path');
+const PrettierPlugin = require("prettier-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const generateConfig = ({folder, file}) => ({
@@ -19,7 +20,10 @@ const generateConfig = ({folder, file}) => ({
             },
         ]
     },
-    plugins: [new ESLintPlugin({})],
+    plugins: [
+        new PrettierPlugin({}),
+        new ESLintPlugin({})
+    ],
 });
 
 const indexConfig = {
