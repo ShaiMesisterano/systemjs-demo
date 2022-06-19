@@ -1,4 +1,5 @@
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const generateConfig = ({folder, file}) => ({
     entry: path.join(__dirname, "src", folder, `${file}.tsx`),
@@ -18,6 +19,7 @@ const generateConfig = ({folder, file}) => ({
             },
         ]
     },
+    plugins: [new ESLintPlugin({})],
 });
 
 const indexConfig = {
