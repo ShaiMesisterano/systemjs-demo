@@ -1,7 +1,4 @@
 {
   "parser": "@babel/eslint-parser",
-  "extends": ["airbnb"],
-  "rules": {
-    "no-unused-vars": 0
-  }
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
 }
