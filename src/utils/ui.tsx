@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-declare global {
-    interface Window { Ext: Record<string, unknown>; }
-}
+(window as any).Ext = (window as any).Ext || {};
 
-window.Ext = window.Ext || {};
-
-window.Ext.createComponent = ({ Component, element }) => {
+(window as any).Ext.createComponent = ({ Component, element }: {Component: any, element: any}) => {
     try {
         ReactDOM.render(<Component />, element);
     } catch ({ message }) {
