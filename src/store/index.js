@@ -35,8 +35,8 @@ System.register(["@reduxjs/toolkit", "./slices/counter/index", "redux-saga", "./
                 reducer: {
                     counter: index_1.default,
                 },
-                middleware: function (getDefaultMiddleware) { return (__spreadArray(__spreadArray([], getDefaultMiddleware({ thunk: false }).concat(redux_logger_1.default.default), true), [sagaMiddleware], false)); },
-                devTools: true
+                middleware: function (getDefaultMiddleware) { return __spreadArray(__spreadArray([], getDefaultMiddleware({ thunk: false }).concat(redux_logger_1.default.default), true), [sagaMiddleware], false); },
+                devTools: true,
             }));
             sagaMiddleware.run(index_2.default);
         }
